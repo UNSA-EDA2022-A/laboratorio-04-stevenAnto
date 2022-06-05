@@ -100,6 +100,20 @@ public class SinglyLinkedList<T> {
 
   // Elimina aquellos nodos de la lista que esten duplicados
   public void deleteDuplicates() {
+    if (size ==0) System.out.println("vacio");
+    int contador = 0;
+    Node <T> puntero1 = this.first;
+    for (int i =1 ; i <size;i++){
+      Node <T> puntero2 = puntero1.getNext();
+      contador = i;
+      for (int j =i; j <size; j++){
+	contador++;
+	if (puntero1.getValue().equals(puntero2.getValue())) deleteNth(contador-1);
+	puntero2 = puntero2.getNext();
+	System.out.println("i"+i+"j"+j+"contador"+(contador-1));
+      }
+      puntero1 = puntero1.getNext();
+    }
 
   }
 
@@ -141,9 +155,9 @@ public class SinglyLinkedList<T> {
 
   public static void main(final String[] args) {
 
-    // testExercicio1();
-     testExercicio2();
-    testExercicio3();       
+     testExercicio1();
+   //  testExercicio2();
+   // testExercicio3();       
 
   }
 
