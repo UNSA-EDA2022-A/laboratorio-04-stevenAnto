@@ -1,4 +1,4 @@
-//package com.example.project;
+package com.example.project;
 
 public class SinglyLinkedList<T> {
   private Node<T> first; // Primero nodo de la lista
