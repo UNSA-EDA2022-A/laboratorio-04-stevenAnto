@@ -110,7 +110,7 @@ public class SinglyLinkedList<T> {
 	contador++;
 	if (puntero1.getValue().equals(puntero2.getValue())) deleteNth(contador-1);
 	puntero2 = puntero2.getNext();
-	System.out.println("i"+i+"j"+j+"contador"+(contador-1));
+	//System.out.println("i"+i+"j"+j+"contador"+(contador-1));
       }
       puntero1 = puntero1.getNext();
     }
@@ -135,13 +135,13 @@ public class SinglyLinkedList<T> {
     //System.out.println("se eliminara a : "+ position);
     Node <T> cur = searchIndex(position-1);
     if (cur != null) {
-    cur.setNext(cur.getNext().getNext());
-    size--;
+      cur.setNext(cur.getNext().getNext());
+      size--;
     }else System.out.println("Fuera de rango");
 
   }
   public Node <T> searchIndex(int i){
-    System.out.println("se buscara indice"+ i);
+    //System.out.println("se buscara indice"+ i);
     Node <T> cur = this.first;
     int contador = 0;
     while (i >= 0 && cur != null && contador != i ){
@@ -155,9 +155,9 @@ public class SinglyLinkedList<T> {
 
   public static void main(final String[] args) {
 
-     testExercicio1();
-   //  testExercicio2();
-   // testExercicio3();       
+    testExercicio1();
+    testExercicio2();
+    testExercicio3();       
 
   }
 
