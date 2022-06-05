@@ -105,10 +105,11 @@ public class SinglyLinkedList<T> {
 
   // Inserta un nuevo nodo en una posicion especifica de la lista
   public void insertNth(T data, int position) {
-    System.out.println("se introduc nuevo nodo en posicion : "+position);
+    //System.out.println("se introduc nuevo nodo en posicion : "+position);
     Node <T> cur = searchIndex(position-1);
     if (position == this.size) addLast(data);
     if ( cur == null) addFirst(data);
+    if (position >= this.size) System.out.println("Fuera de rango");
     if ( cur != null){
       cur.setNext( new Node<T>(data, cur.getNext()));
     }
@@ -117,12 +118,12 @@ public class SinglyLinkedList<T> {
 
   // Elimina el nodo de una posicion especifica de la lista
   public void deleteNth(int position) {
-    System.out.println("se eliminara a : "+ position);
+    //System.out.println("se eliminara a : "+ position);
     Node <T> cur = searchIndex(position-1);
     if (cur != null) {
     cur.setNext(cur.getNext().getNext());
     size--;
-    }else System.out.println("indice no encontrado o vacio");
+    }else System.out.println("Fuera de rango");
 
   }
   public Node <T> searchIndex(int i){
