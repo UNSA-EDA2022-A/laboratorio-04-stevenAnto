@@ -121,8 +121,10 @@ public class SinglyLinkedList<T extends Comparable <T>> {
   public void insertNth(T data, int position) {
     //System.out.println("se introduc nuevo nodo en posicion : "+position);
     Node <T> cur = searchIndex(position-1);
-    if (position == this.size) addLast(data);
-    if ( cur == null) addFirst(data);
+    if (position == this.size) {
+	    addLast(data);
+	    return;
+    if ( position == 0) addFirst(data);
     if (position >= this.size) System.out.println("Fuera de rango");
     if ( cur != null){
       cur.setNext( new Node<T>(data, cur.getNext()));
@@ -148,6 +150,7 @@ public class SinglyLinkedList<T extends Comparable <T>> {
       cur = cur.getNext();
       contador++;
     }
+    if(i<0) return null;
     if (cur != null) return cur;
     return null;
 
