@@ -124,6 +124,7 @@ public class SinglyLinkedList<T extends Comparable <T>> {
     if (position == this.size) {
 	    addLast(data);
 	    return;
+    }
     if ( position == 0) addFirst(data);
     if (position >= this.size) System.out.println("Fuera de rango");
     if ( cur != null){
